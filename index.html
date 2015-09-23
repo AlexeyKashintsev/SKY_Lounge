@@ -14,6 +14,7 @@
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
 	<!-- Custom styles -->
+	<link rel="stylesheet" href="assets/css/custom.css">
 	<link rel="stylesheet" href="assets/css/fonts/exotwo.css">
 	<link rel="stylesheet" href="assets/css/magister.css">
 	<link rel="stylesheet" href="assets/css/360player.css">
@@ -96,19 +97,25 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center"
-        style="background-color: rgba(25, 25, 200, 0.3)">	
+			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center guest-welcome">	
 
 				<!-- Site Title, your name, HELLO msg, etc. -->
-				<h1 class="title">Party PLES</h1>
-				<h2 class="subtitle">Новая вечеринка</h2>
+				<h1 class="title">SKY Lounge Club</h1>
+                                <br>
 
 				<!-- Short introductory (optional) -->
 				<h2 class="subtitle">
-					26/07/2014
+					03/10/2015
 				</h2>
 				
-				<!-- Nice place to describe your site in a sentence or two -->
+                                <button id="get-invite" class="get-invite hidden">Получить приглашение</button>
+                                
+                                <form id="guest-reg" class="guest-reg ">
+                                    <input id="name" placeholder="Ваше имя"></input><br>
+                                    <input id="phone" placeholder="Ваш телефон"></input><br>
+                                    <input id="email" placeholder="Ваш e-mail"></input><br>
+                                    <button id="submit">Получить приглашение</button>
+                                </form>
 	
 			</div> <!-- /col -->
 		</div> <!-- /row -->
@@ -196,7 +203,7 @@
 <section class="section" id="contact">
 	<div class="container">
 	
-		<h2 class="text-center title">Party Ples</h2>
+		<h2 class="text-center title">SKY Lounge Club</h2>
 
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2 text-center">

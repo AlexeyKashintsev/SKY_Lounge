@@ -14,7 +14,7 @@ html {
 div.background {
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
     display: block;
     transition: opacity 2s ease-in-out;
 }
@@ -39,6 +39,7 @@ div#background-1 {
 
 .guest-reg input {
     width: 30%;
+    min-width: 150px;
     text-align: center;
     font-size: large;
     border: none;
@@ -64,4 +65,13 @@ button.get-invite:hover {
 form.validated input:invalid {
     background-color: rgba(255,150,150,0.9);
     border: none;
+}
+
+@media screen and (max-width: 700px) {
+    h1.title {
+        font-size: 4em;
+    }
+    h2.subtitle {
+        font-size: 2em;
+    }
 }

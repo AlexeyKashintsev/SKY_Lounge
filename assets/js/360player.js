@@ -37,7 +37,9 @@ function ThreeSixtyPlayer() {
       isTouchDevice = (uA.match(/ipad|iphone/i)),
       hasRealCanvas = (typeof window.G_vmlCanvasManager === 'undefined' && typeof document.createElement('canvas').getContext('2d') !== 'undefined'),
       // I dunno what Opera doesn't like about this. I'm probably doing it wrong.
-      fullCircle = (isOpera||isChrome?359.9:360);
+      fullCircle = (isOpera||isChrome?359.9:360),
+      // exclude old IE from hi-DPI / "retina"-scale display size
+      hiDPIScale = (navigator.userAgent.match(/msie [678]/i)? 1 : 2);
 
   // CSS class for ignoring MP3 links
   this.excludeClass = 'threesixty-exclude';
@@ -58,23 +60,23 @@ function ThreeSixtyPlayer() {
   this.config = {
 
     playNext: false,   // stop after one sound, or play through list until end
-    autoPlay: false,   // start playing the first sound right away
+    autoPlay: true,   // start playing the first sound right away
     allowMultiple: false,  // let many sounds play at once (false = only one sound playing at a time)
     loadRingColor: '#ccc', // how much has loaded
     playRingColor: '#000', // how much has played
     backgroundRingColor: '#eee', // color shown underneath load + play ("not yet loaded" color)
 
     // optional segment/annotation (metadata) stuff..
-    segmentRingColor: 'rgba(255,255,255,0.3)', // metadata/annotation (segment) colors
+    segmentRingColor: 'rgba(255,255,255,0.33)', // metadata/annotation (segment) colors
     segmentRingColorAlt: 'rgba(0,0,0,0.1)',
-    loadRingColorMetadata: 'rgba(0,0,255,0.3)', // "annotations" load color
+    loadRingColorMetadata: '#ddd', // "annotations" load color
     playRingColorMetadata: 'rgba(128,192,256,0.9)', // how much has played when metadata is present
 
     circleDiameter: null, // set dynamically according to values from CSS
     circleRadius: null,
     animDuration: 500,
     animTransition: window.Animator.tx.bouncy, // http://www.berniecode.com/writing/animator.html
-    showHMSTime: false, // hours:minutes:seconds vs. seconds-only
+    showHMSTime: true, // hours:minutes:seconds vs. seconds-only
     scaleFont: true,  // also set the font size (if possible) while animating the circle
 
     // optional: spectrum or EQ graph in canvas (not supported in IE <9, too slow via ExCanvas)
@@ -463,7 +465,7 @@ function ThreeSixtyPlayer() {
 
       // tack on some custom data
 
-      diameter = parseInt(self.getElementsByClassName('sm2-360ui','div',oContainer)[0].offsetWidth, 10);
+      diameter = parseInt(self.getElementsByClassName('sm2-360ui','div',oContainer)[0].offsetWidth * hiDPIScale, 10);
 
       // see note re: IE <9 and excanvas when Modernizr is included, making weird things happen with <canvas>.
       canvasElements = self.getElementsByClassName('sm2-canvas','canvas',oContainer),
@@ -990,13 +992,13 @@ function ThreeSixtyPlayer() {
 
     oTemp = document.body.appendChild(oFakeUI);
 
-    fakeDiameter = oFakeUIBox.offsetWidth;
+    fakeDiameter = oFakeUIBox.offsetWidth * hiDPIScale;
 
     uiHTML = self.getUIHTML(fakeDiameter);
 
     oFakeUIBox.innerHTML = uiHTML[1]+uiHTML[2]+uiHTML[3];
 
-    circleDiameter = parseInt(oFakeUIBox.offsetWidth, 10);
+    circleDiameter = parseInt(fakeDiameter, 10);
     circleRadius = parseInt(circleDiameter/2, 10);
 
     oTiming = self.getElementsByClassName('sm2-timing','div',oTemp)[0];
@@ -1092,6 +1094,10 @@ function ThreeSixtyPlayer() {
         } else { 
           // add a handler for the button
           oCanvas = oLinks[i].parentNode.getElementsByTagName('canvas')[0];
+        }
+        // enable hi-DPI / retina features?
+        if (hiDPIScale > 1) {
+          self.addClass(oCanvas, 'hi-dpi');
         }
         oCover = self.getElementsByClassName('sm2-cover','div',oLinks[i].parentNode)[0];
         oBtn = oLinks[i].parentNode.getElementsByTagName('span')[0];
@@ -1385,8 +1391,8 @@ soundManager.setup({
   debugMode: (window.location.href.match(/debug=1/i)), // disable or enable debug output
   consoleOnly: true,
   flashVersion: 9,
-  useHighPerformance: true,
-  useFlashBlock: true
+  useHighPerformance: true/*,
+  useFlashBlock: true*/
 });
 
 // FPS data, testing/debug only

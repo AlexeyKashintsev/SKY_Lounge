@@ -1,7 +1,7 @@
 ymaps.ready(function () {
     var myMap = new ymaps.Map('YMapsID', {
-        center: [57.466127, 41.484469],
-        zoom: 12,
+        center: [55.746519, 37.534820],
+        zoom: 14,
         // Обратите внимание, что в API 2.1 по умолчанию карта создается с элементами управления.
         // Если вам не нужно их добавлять на карту, в ее параметрах передайте пустой массив в поле controls.
         controls: []
@@ -10,7 +10,7 @@ ymaps.ready(function () {
     var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
         balloonContentBody: [
             '<address>',
-            '<strong>Party Ples</strong>',
+            '<strong>SKY Lounge Club</strong>',
             '<br/>',
             'Адрес: Плёс',
             '<br/>',

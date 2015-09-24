@@ -1,4 +1,4 @@
-html {
+/*html {
 	background:#505D6E url(../images/background/1.jpg) no-repeat center center fixed; 
 	min-height:100%;
 	-webkit-background-size: cover;
@@ -9,7 +9,7 @@ html {
 	-moz-transition: background 0.5s linear;
 	-o-transition: background 0.5s linear;
 	transition: background 0.5s linear;	
-}
+}*/
 
 body {
 	background:transparent;

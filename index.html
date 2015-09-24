@@ -79,6 +79,13 @@
 
 <!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
 <body>
+<div id="background-7" class="background div-hidden"></div>
+<div id="background-6" class="background div-hidden"></div>
+<div id="background-5" class="background div-hidden"></div>
+<div id="background-4" class="background div-hidden"></div>
+<div id="background-3" class="background div-hidden"></div>
+<div id="background-2" class="background div-hidden"></div>
+<div id="background-1" class="background"></div>
 <nav class="mainmenu">
 	<div class="container">
 		<div class="dropdown">
@@ -95,7 +102,6 @@
 <!-- Main (Home) section -->
 <section class="section" id="head">
 	<div class="container">
-
 		<div class="row">
 			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center guest-welcome">	
 
@@ -108,15 +114,17 @@
 					03/10/2015
 				</h2>
 				
-                                <button id="get-invite" class="get-invite hidden">Получить приглашение</button>
+                                <button id="get-invite" class="get-invite">Получить приглашение</button>
                                 
-                                <form id="guest-reg" class="guest-reg ">
-                                    <input id="name" placeholder="Ваше имя"></input><br>
-                                    <input id="phone" placeholder="Ваш телефон"></input><br>
-                                    <input id="email" placeholder="Ваш e-mail"></input><br>
-                                    <button id="submit">Получить приглашение</button>
+                                <form id="guest-reg" method="POST" class="guest-reg" style="display: none" target="result" enctype="application/x-www-form-urlencoded"
+                                      action="application?__type=14&__moduleName=Inviter&__methodName=addGuest">
+                                    <input id="name" required="" name="name" placeholder="Ваше имя"></input><br>
+                                    <input id="phone" required="" name="phone" placeholder="Ваш телефон"></input><br>
+                                    <input id="email" required="" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" name="email" placeholder="Ваш e-mail"></input><br>
+                                    <button id="submit" class="get-invite">Получить приглашение</button>
                                 </form>
-	
+                                <h2 id="res-ok" class="subtitle" style="display: none">Заявка принята. Спасибо!</h2>
+                                <iframe id="submit-result" name="result" style="display: none"></iframe>
 			</div> <!-- /col -->
 		</div> <!-- /row -->
 	
@@ -230,51 +238,7 @@
 <!-- Yandex maps -->
 <script src="assets/js/yandex.js"></script>
 <!-- Change background -->
-<script>
-	var aImgNum = 2;
-	var curStr = 0;
-	var delay = 30;
-	var ready = false;
-	var timerId = window.setInterval(
-				function(){
-					htmlBody = document.getElementsByTagName("html")[0];
-					htmlBody.setAttribute("style", "background:#505D6E url(assets/images/background/" + aImgNum + ".jpg) no-repeat fixed center center / cover;")
-					aImgNum++;
-					aImgNum = aImgNum > 6 ? 1 : aImgNum;
-				}, 5000);
-/*	var story = ["Суета серых будней",
-"Границы обыденной реальности",
-"Когда новый день похож на все остальные...",
-"Но приходит час, когда ты смотришь на все по другому",
-"Когда привычные границы открывают новые горизонты",
-"Когда счастье врывается в твою душу и пронизывает каждую клеточку",
-"Каждый атом твоей сущности",
-"Когда ты один на один с этим миром,<br>И этот мир есть ты",
-"Каждый из нас знает что так и есть,<br>И по другому не может быть",
-"Все просто",
-"Нет никаких границ",
-"Только новые горизонты,<br>которые предстоит достичь"];
-	var h_story = document.getElementById('h_story');
-	function storyTeller(str) {
-		$('#h_story').fadeOut( 1000, function() { 
-			h_story.innerHTML = str;
-			htmlBody = document.getElementsByTagName("html")[0];
-      htmlBody.setAttribute("style", "background:#505D6E url(assets/images/background/" + aImgNum + ".jpg) no-repeat center center fixed;")
-			$('#h_story').fadeIn( 1000 );
-		} );
-	    }
-	storyTeller(story[curStr]);
-	curStr++;
-	function eventFire(el, etype){
-		if (el.fireEvent) {
-		  el.fireEvent('on' + etype);
-		} else {
-		  var evObj = document.createEvent('Events');
-		  evObj.initEvent(etype, true, false);
-		  el.dispatchEvent(evObj);
-		}
-	      }    */
-</script>
+<script src="assets/js/behavior.js"></script>
 
 <script>
 	soundManager.setup({
@@ -326,6 +290,6 @@
 		  soundManager.useHTML5Audio = true;
 		}*/
 </script>
-<!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter25485329 = new Ya.Metrika({id:25485329, trackLinks:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/25485329" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+<!-- Yandex.Metrika counter --><noscript><div><img src="//mc.yandex.ru/watch/25485329" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 </body>
 </html>

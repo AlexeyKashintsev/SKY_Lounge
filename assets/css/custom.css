@@ -1,4 +1,4 @@
-/*
+﻿/*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
@@ -9,6 +9,10 @@ and open the template in the editor.
 */
 html {
     background-color: #303D3E;
+}
+
+.mainmenu {
+	position: absolute;
 }
 
 div.background {
@@ -39,6 +43,7 @@ div#background-1 {
 
 .guest-reg input {
     width: 30%;
+    min-width: 200px;
     text-align: center;
     font-size: large;
     border: none;
@@ -47,11 +52,11 @@ div#background-1 {
 }
 
 button.get-invite {
-    font-size: xx-large;
-    height: 70px;
+	font-size: xx-large;
+	height: 70px;
+	margin-bottom: 40px;
     background-color: whitesmoke;
     border: none;
-    margin-bottom: 40px;
     font-family: "exo_2.0extra_light",Helvetica,Arial,sans-serif;
     font-weight: bold;
     transition: background ease-in-out 2s;
@@ -64,6 +69,54 @@ button.get-invite:hover {
 form.validated input:invalid {
     background-color: rgba(255,150,150,0.9);
     border: none;
+}
+
+@media screen and (max-width: 1280px) {
+    h1.title {
+        font-size: 4em;
+    }
+    h2.subtitle {
+        font-size: 2em;
+    }
+	button.get-invite {
+		font-size: large;
+		height: 60px;
+		margin-bottom: 30px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+    h1.title {
+        font-size: 3em;
+    }
+    h2.subtitle {
+        font-size: 1em;
+    }
+	button.get-invite {
+		font-size: medium;
+		height: 40px;
+		margin-bottom: 30px;
+	}
+	.guest-reg input {
+		font-size: medium;
+		padding: 5px;
+	}
+}
+
+@media screen {
+	#YMapsID {
+		height: 500px;
+	}
+}
+
+@media handheld {
+	#YMapsID {
+		height: 250px;
+	}
+}
+
+html {
+	overflow: hidden;
 }
 
 div.player > p {
@@ -96,8 +149,7 @@ div.play-button:hover {
 }
 
 div.play-description {
-    left: 67px;
-    width: 170px;
+    margin-left: 53px;
 }
 
 div.play-description {
@@ -106,4 +158,7 @@ div.play-description {
 
 p.artist {
     font-weight: bold;
+}
+p.song-title {
+	font-size: small;
 }

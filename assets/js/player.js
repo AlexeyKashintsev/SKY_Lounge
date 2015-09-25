@@ -4,16 +4,26 @@
  * and open the template in the editor.
  */
 window.onload = function(){
-    wimpyButton.play('assets/sound/1.mp3');
+    //wimpyButton.play('assets/sound/1.mp3');
+    var mp3;
+    mp3 = soundManager.createSound({
+        url: 'assets/sound/1.mp3',
+        autoPlay: true,
+        pan: -75,
+        volume: 50,
+        onfinish: function(){
+            mp3.play();
+        }
+    });
     $('#pb-contr').click(function(){
-        if(wimpyButton.playing){
+        if(!mp3.paused){
             play = false;
             $('#playbutton').attr('src', 'assets/css/play.png');
-            wimpyButton.pause();
+            mp3.pause();
         } else {
             play = true;
             $('#playbutton').attr('src', 'assets/css/pause.png');
-            wimpyButton.play('assets/sound/1.mp3');
+            mp3.play();
         }
     })
 }

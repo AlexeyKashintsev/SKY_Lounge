@@ -17,9 +17,7 @@
 	<link rel="stylesheet" href="assets/css/custom.css">
 	<link rel="stylesheet" href="assets/css/fonts/exotwo.css">
 	<link rel="stylesheet" href="assets/css/magister.css">
-	<link rel="stylesheet" href="assets/css/360player.css">
-	<link rel="stylesheet" href="assets/css/360player-visualisation.css">
-
+        <link href="assets/css/WimpyButton_7780218.css" rel="stylesheet" type="text/css">
 	<!-- Fonts -->
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
@@ -29,48 +27,7 @@
 	<!--[if IE]><script type="text/javascript" src="assets/js/excanvas.js"></script><![endif]-->
 	<script src="assets/js/berniecode-animator.js"></script>
 	
-	<script src="assets/js/soundmanager2.js"></script>
-	<script src="assets/js/360player.js"></script>
-	<script type="text/javascript">
-            soundManager.setup({
-            // path to directory containing SM2 SWF
-            url: 'assets/swf'
-            });
-            threeSixtyPlayer.config.scaleFont = (navigator.userAgent.match(/msie/i)?false:true);
-            threeSixtyPlayer.config.showHMSTime = true;
-
-            // enable some spectrum stuffs
-
-            threeSixtyPlayer.config.useWaveformData = true;
-            threeSixtyPlayer.config.useEQData = true;
-
-            // enable this in SM2 as well, as needed
-
-            if (threeSixtyPlayer.config.useWaveformData) {
-            soundManager.flash9Options.useWaveformData = true;
-            }
-            if (threeSixtyPlayer.config.useEQData) {
-            soundManager.flash9Options.useEQData = true;
-            }
-            if (threeSixtyPlayer.config.usePeakData) {
-            soundManager.flash9Options.usePeakData = true;
-            }
-
-            if (threeSixtyPlayer.config.useWaveformData || threeSixtyPlayer.flash9Options.useEQData || threeSixtyPlayer.flash9Options.usePeakData) {
-            // even if HTML5 supports MP3, prefer flash so the visualization features can be used.
-            soundManager.preferFlash = true;
-            }
-
-            // favicon is expensive CPU-wise, but can be used.
-            if (window.location.href.match(/hifi/i)) {
-            threeSixtyPlayer.config.useFavIcon = true;
-            }
-
-            if (window.location.href.match(/html5/i)) {
-            // for testing IE 9, etc.
-            soundManager.useHTML5Audio = true;
-            }
-	</script>
+	<script src="assets/js/wimpy.js"></script>
         <!--link rel="stylesheet" type="text/css" href="web/pwc/reset.css" /-->
         <!--link rel="stylesheet" type="text/css" href="web/pwc/theme.css" /-->
 	<!--script type="text/javascript" src="web/pwc/pwc.nocache.js"></script>
@@ -85,20 +42,33 @@
 <div id="background-3" class="background div-hidden"></div>
 <div id="background-2" class="background div-hidden"></div>
 <div id="background-1" class="background"></div>
+
 <nav class="mainmenu">
-	<div class="container">
-		<div class="dropdown">
-			<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
-			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-				<li><a href="#head" id="head2btn">Invite</a></li>
-				<li><a href="#contact">Контакты</a></li>
-			</ul>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="container">
+                    <div class="dropdown">
+                            <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                            <!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <li><a href="#head" id="head2btn">Invite</a></li>
+                                    <li><a href="#contact">Контакты</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="container">
+                    <img id ='player' src="assets/css/pause.png" height="50" width="50">
+                    Песенка
+                </div>
+            </div>
+        </div>
+    </div>
 </nav>
-<!-- ПЛЕЕР! -->
-<!--div class="ui360 ui360-vis"><a href="assets/sound/1.mp3"></a></div-->
+
+
 
 <!-- Main (Home) section -->
 <section class="section" id="head">
@@ -153,7 +123,6 @@
 	</div>
 </section>
 
-
 <!-- Load js libs only when the page is loaded. -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
@@ -164,7 +133,22 @@
 <script src="assets/js/yandex.js"></script>
 <!-- Change background -->
 <script src="assets/js/behavior.js"></script>
-	
+<script>
+    window.onload = function(){
+        wimpyButton.play('assets/sound/1.mp3');
+        $('#player').click(function(){
+            if(wimpyButton.playing){
+                play = false;
+                $('#player').attr('src', 'assets/css/play.png');
+                wimpyButton.pause();
+            } else {
+                play = true;
+                $('#player').attr('src', 'assets/css/pause.png');
+                wimpyButton.play('assets/sound/1.mp3');
+            }
+        })
+    }
+</script>
 <!-- Yandex.Metrika counter --><noscript><div><img src="//mc.yandex.ru/watch/25485329" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 </body>
 </html>

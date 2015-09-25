@@ -355,7 +355,7 @@
 
         function Params(aHttpRequest) {
             var self = this;
-            var paramNames = aHttpRequest.getParameterMap().keySet().toArray();
+            var paramNames = aHttpRequest.getParameterMap().keySet();
             if (paramNames) {
                 for (var i = 0; i < paramNames.length; i++) {
                     var aParamName = paramNames[i];

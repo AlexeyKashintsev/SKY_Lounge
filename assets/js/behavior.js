@@ -12,12 +12,12 @@ function setBackground(doNotChange) {
     if (!doNotChange) {
         var oldBg = document.getElementById("background-" + aImgNum);
         aImgNum++;
-        aImgNum = aImgNum > 7 ? 1 : aImgNum;
+        aImgNum = aImgNum > 6 ? 1 : aImgNum;
         var curBg = document.getElementById("background-" + aImgNum);
         $(oldBg).addClass('div-hidden');
         $(curBg).removeClass('div-hidden');
     }
-    var nextBgNum = (aImgNum < 7 ? aImgNum + 1 : 1);
+    var nextBgNum = (aImgNum < 6 ? aImgNum + 1 : 1);
     nextBg = document.getElementById("background-" + nextBgNum);
     nextBg.setAttribute("style", "background:#505D6E url(assets/images/background/" + nextBgNum + ".jpg) no-repeat fixed center center / cover;")
 };

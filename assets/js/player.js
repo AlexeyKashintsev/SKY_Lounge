@@ -9,9 +9,11 @@ window.onload = function(){
     mp3 = soundManager.createSound({
         url: 'assets/sound/1.mp3',
         autoPlay: true,
+		ignoreMobileRestrictions: true,
         pan: -75,
         volume: 50,
-        onfinish: function(){
+        onReady: function(){
+			alert('Created!');
             mp3.play();
         }
     });

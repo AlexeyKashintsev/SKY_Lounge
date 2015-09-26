@@ -9,11 +9,10 @@ window.onload = function(){
     mp3 = soundManager.createSound({
         url: 'assets/sound/1.mp3',
         autoPlay: true,
-		ignoreMobileRestrictions: true,
+	ignoreMobileRestrictions: true,
         pan: -75,
         volume: 50,
-        onReady: function(){
-			alert('Created!');
+        onfinish: function(){
             mp3.play();
         }
     });
@@ -27,5 +26,18 @@ window.onload = function(){
             $('#playbutton').attr('src', 'assets/css/pause.png');
             mp3.play();
         }
-    })
+    });
+    setTimeout(function(){
+        var oneCklick = true;
+        //alert(mp3.playState);
+        //if(!mp3.playState){
+            $('body').click(function(){
+                if(oneCklick){
+                    mp3.pause();
+                    mp3.play();
+                    oneCklick = false;
+                }
+            });
+        //}
+    }, 0);
 }

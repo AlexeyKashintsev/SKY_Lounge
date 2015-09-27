@@ -31,6 +31,14 @@ div#background-1 {
     background: #303D3E url(../images/background/1.jpg) no-repeat center/cover fixed;
 }
 
+div#h_story {
+	font-size: xx-large;
+	margin-bottom: 45px;
+    text-align: center;
+    font-family: "exo_2.0extra_light",Helvetica,Arial,sans-serif;
+	font-weight: bold;
+}
+
 .guest-welcome {
     background-color: rgba(25, 25, 25, 0.3);
 	overflow-y: auto;

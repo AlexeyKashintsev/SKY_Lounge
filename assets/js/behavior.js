@@ -3,6 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ 
+/*	var story = ["Суета серых будней",
+"Границы обыденной реальности",
+"Когда новый день похож на все остальные...",
+"Но приходит час, когда ты смотришь на все по другому",
+"Когда привычные границы открывают новые горизонты",
+"Когда счастье врывается в твою душу и пронизывает каждую клеточку",
+"Каждый атом твоей сущности",
+"Когда ты один на один с этим миром,<br>И этот мир есть ты",
+"Каждый из нас знает что так и есть,<br>И по другому не может быть",
+"Все просто",
+"Нет никаких границ",
+"Только новые горизонты,<br>которые предстоит достичь"];*/
+var story = [
+'Самый высокий клуб в Европе',
+'Первый ночной клуб в Москва-Сити',
+'Лучший вид на Москву и Москва-Реку',
+'Уникальные фишки в дизайне',
+'Самые взрывоопасные DJ',
+'Cамое респектабельное и комфортное место отдыха среди российских и зарубежных звезд, бизнесменов и политиков.'
+]
+var h_story = document.getElementById('h_story');
+function storyTeller(str, doNotFade) {
+	function setText() {
+		if (str) {h_story.innerHTML = str;}
+		$('#h_story').fadeIn( 1000 );
+	}
+	if (!doNotFade) {
+		$('#h_story').fadeOut( 1000, function() { 
+			setText();
+		} );
+	} else 
+		setText();
+}
 
 var aImgNum = 1;
 var imgNum = 8;
@@ -11,6 +45,10 @@ var delay = 30;
 var ready = false;
 var allLoaded = false;
 function setBackground(doNotChange) {
+	if (!story[curStr])
+		curStr = 0;
+	if (!doNotChange) storyTeller(story[curStr]);
+	curStr++;
     if (!doNotChange) {
         var oldBg = document.getElementById("background-" + aImgNum);
         aImgNum++;
@@ -30,41 +68,9 @@ function setBackground(doNotChange) {
 setBackground(true);
 var timerId = window.setInterval(
     setBackground, 10000);
-/*	var story = ["Суета серых будней",
-"Границы обыденной реальности",
-"Когда новый день похож на все остальные...",
-"Но приходит час, когда ты смотришь на все по другому",
-"Когда привычные границы открывают новые горизонты",
-"Когда счастье врывается в твою душу и пронизывает каждую клеточку",
-"Каждый атом твоей сущности",
-"Когда ты один на один с этим миром,<br>И этот мир есть ты",
-"Каждый из нас знает что так и есть,<br>И по другому не может быть",
-"Все просто",
-"Нет никаких границ",
-"Только новые горизонты,<br>которые предстоит достичь"];
-	var h_story = document.getElementById('h_story');
-	function storyTeller(str) {
-		$('#h_story').fadeOut( 1000, function() { 
-			h_story.innerHTML = str;
-			htmlBody = document.getElementsByTagName("html")[0];
-      htmlBody.setAttribute("style", "background:#505D6E url(assets/images/background/" + aImgNum + ".jpg) no-repeat center center fixed;")
-			$('#h_story').fadeIn( 1000 );
-		} );
-	    }
-	storyTeller(story[curStr]);
-	curStr++;
-	function eventFire(el, etype){
-		if (el.fireEvent) {
-		  el.fireEvent('on' + etype);
-		} else {
-		  var evObj = document.createEvent('Events');
-		  evObj.initEvent(etype, true, false);
-		  el.dispatchEvent(evObj);
-		}
-	      }    */
 
 $('#get-invite').click(function() {
-    $('#get-invite').slideUp(100, function() {
+    $('#first-invite').slideUp(100, function() {
         $('#guest-reg').slideDown(400);
     });
 });

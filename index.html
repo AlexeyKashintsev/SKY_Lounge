@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" charset="utf-8">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -86,17 +86,20 @@
 					02/10/2015
 				</h2>
 				
-                                <button id="get-invite" class="get-invite">Получить приглашение</button>
-                                
-                                <form id="guest-reg" method="POST" class="guest-reg" style="display: none" target="result" enctype="application/x-www-form-urlencoded"
-                                      action="application?__type=14&__moduleName=Inviter&__methodName=addGuest">
-                                    <input id="name" required="" name="name" placeholder="Ваше имя"></input><br>
-                                    <input id="phone" required="" name="phone" placeholder="Ваш телефон"></input><br>
-                                    <input id="email" required="" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" name="email" placeholder="Ваш e-mail"></input><br>
-                                    <button id="submit" class="get-invite">Получить приглашение</button>
-                                </form>
-                                <h2 id="res-ok" class="subtitle" style="display: none">Заявка принята. Спасибо!</h2>
-                                <iframe id="submit-result" name="result" style="display: none"></iframe>
+				<div id='first-invite'>
+					<div id='h_story'>Самый высокий клуб в Европе</div>
+					<button id="get-invite" class="get-invite">Получить приглашение</button>
+				</div>
+				
+				
+				<form id="guest-reg" method="POST" class="guest-reg" style="display: none" target="result" enctype="application/x-www-form-urlencoded" action="application?__type=14&__moduleName=Inviter&__methodName=addGuest" accept-charset="utf-8">
+					<input id="name" required="" name="name" placeholder="Ваше имя"></input><br>
+					<input id="phone" required="" name="phone" placeholder="Ваш телефон"></input><br>
+					<input id="email" required="" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" name="email" placeholder="Ваш e-mail"></input><br>
+					<button id="submit" class="get-invite">Получить приглашение</button>
+				</form>
+				<h2 id="res-ok" class="subtitle" style="display: none">Заявка принята. Спасибо!</h2>
+				<iframe id="submit-result" name="result" style="display: none"></iframe>
 			</div> <!-- /col -->
 		</div> <!-- /row -->
 	

@@ -26,6 +26,17 @@ window.onload = function(){
         }
     };
     var mp3;
+    
+    soundManager.defaultOptions.onpause = function (){
+        $('#playbutton').attr('src', 'assets/css/play.png');
+    };
+    soundManager.defaultOptions.onresume = function (){
+        $('#playbutton').attr('src', 'assets/css/pause.png');
+    };
+    soundManager.defaultOptions.onplay = function (){
+        $('#playbutton').attr('src', 'assets/css/pause.png');
+    };
+    
     mp3 = soundManager.createSound({
         url: 'assets/sound/1.mp3',
         autoPlay: false,
@@ -36,12 +47,11 @@ window.onload = function(){
             mp3.play();
         }
     });
+    
     $('#pb-contr').click(function(){
         if(!mp3.paused){
-            $('#playbutton').attr('src', 'assets/css/play.png');
             mp3.pause();
         } else {
-            $('#playbutton').attr('src', 'assets/css/pause.png');
             mp3.play();
         }
     });
@@ -49,10 +59,8 @@ window.onload = function(){
     if(isMobile.any()){
         mp3.play();
         mp3.pause();
-        $('#playbutton').attr('src', 'assets/css/play.png');
     } else {
         mp3.play();
-        $('#playbutton').attr('src', 'assets/css/pause.png');
     }
     
 }

@@ -45,14 +45,14 @@ window.onload = function(){
             mp3.play();
         }
     });
-    setTimeout(function(){
-        if(isMobile.any()){
-            mp3.play();
-            mp3.pause();
-            $('#playbutton').attr('src', 'assets/css/play.png');
-        } else {
-            mp3.play();
-            $('#playbutton').attr('src', 'assets/css/pause.png');
-        }
-    }, 0);
+    
+    if(isMobile.any()){
+        mp3.play();
+        mp3.pause();
+        $('#playbutton').attr('src', 'assets/css/play.png');
+    } else {
+        mp3.play();
+        $('#playbutton').attr('src', 'assets/css/pause.png');
+    }
+    
 }

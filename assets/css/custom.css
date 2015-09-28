@@ -32,7 +32,7 @@ div#background-1 {
 }
 
 div#h_story {
-	font-size: xx-large;
+	font-size: x-large;
 	margin-bottom: 45px;
     text-align: center;
     font-family: "exo_2.0extra_light",Helvetica,Arial,sans-serif;
@@ -61,7 +61,7 @@ div#h_story {
 }
 
 button.get-invite {
-	font-size: xx-large;
+	font-size: x-large;
 	height: 70px;
 	margin-bottom: 40px;
     background-color: whitesmoke;

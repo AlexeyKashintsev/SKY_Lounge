@@ -20,6 +20,7 @@ function Inviter() {
     self.addGuest = function() {//, aFacebook, aVk, anUTM, success, failure) {
         var request = (new P.HttpContext()).request;
         try {
+			P.Logger.info('New client: ' + request.params.name);
             model.addGuest.push({
                 name:   request.params.name,
                 phone:  request.params.phone,

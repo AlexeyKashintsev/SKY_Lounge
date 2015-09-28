@@ -17,17 +17,24 @@ function Inviter() {
      * @param {type} aMail
      * @returns {String}
      */
-    self.addGuest = function() {//, aFacebook, aVk, anUTM, success, failure) {
-        var request = (new P.HttpContext()).request;
+    self.addGuest = function(aName, aPhone, anEmail, aFacebook, aVk, anUTM, success, failure) {
+//        var request = (new P.HttpContext()).request;
+//        P.Logger.info('Encoding: ' + request.characterEncoding);
+        P.Logger.info('Client name: ' + aName);
         try {
-			P.Logger.info('New client: ' + request.params.name);
-            model.addGuest.push({
+        /*    model.addGuest.push({
                 name:   request.params.name,
                 phone:  request.params.phone,
                 email:  request.params.email,
                 facebook:   request.params.facebook,
                 vk: request.params.vk,
                 UTM:    request.params.utm
+            });
+            model.save();*/
+            model.addGuest.push({
+                name:   aName,
+                phone:  aPhone,
+                email:  anEmail
             });
             model.save();
             return 'Заявка принята. Спасибо!';

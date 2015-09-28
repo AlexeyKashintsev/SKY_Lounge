@@ -80,15 +80,27 @@ $('#submit').click(function() {
      $('#guest-reg').addClass('validated');
  });
 
-$('#guest-reg').submit(function() {
-	yaCounter32702565.reachGoal('subscription');
-    $('#guest-reg').slideUp(100, function() {
-        $('#res-ok').slideDown(200);
-    });
-});
-
 function changeSize() {
 	$('.guest-welcome').attr('style', 'max-height: ' + window.innerHeight * 0.7 + 'px');
 }
 changeSize();
 window.onresize = changeSize;
+
+(function () {
+    function ready() {
+        P.cacheBust = true;
+        P.require(['Starter'], function(){
+            var st = new Starter();
+            st.execute();
+        }, function(e){
+            P.Logger.severe(e);
+            console.log('An error occured while require(\'starter\'). Error: ' + e)
+        });
+    }
+    if(!this.P) {
+        this.P = {};
+        P.ready = ready;
+    } else {
+        ready();
+    }
+})();

@@ -60,17 +60,6 @@ div#h_story {
     background-color: rgba(255,255,255,0.9);
 }
 
-button.get-invite {
-	font-size: x-large;
-	height: 70px;
-	margin-bottom: 40px;
-    background-color: whitesmoke;
-    border: none;
-    font-family: "exo_2.0extra_light",Helvetica,Arial,sans-serif;
-    font-weight: bold;
-    transition: background ease-in-out 2s;
-}
-
 button.get-invite:hover {
     background-color: lightblue;
 }
@@ -91,6 +80,11 @@ form.validated input:invalid {
 		font-size: large;
 		height: 60px;
 		margin-bottom: 30px;
+		background-color: whitesmoke;
+		border: none;
+		font-family: "exo_2.0extra_light",Helvetica,Arial,sans-serif;
+		font-weight: bold;
+		transition: background ease-in-out 2s;
 	}
 }
 
@@ -105,11 +99,27 @@ form.validated input:invalid {
 		font-size: medium;
 		height: 40px;
 		margin-bottom: 30px;
+		background-color: whitesmoke;
+		border: none;
+		font-family: "exo_2.0extra_light",Helvetica,Arial,sans-serif;
+		font-weight: bold;
+		transition: background ease-in-out 2s;
 	}
 	.guest-reg input {
 		font-size: medium;
 		padding: 5px;
 	}
+}
+
+button.get-invite {
+	font-size: x-large;
+	height: 70px;
+	margin-bottom: 40px;
+    background-color: whitesmoke;
+    border: none;
+    font-family: "exo_2.0extra_light",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    transition: background ease-in-out 2s;
 }
 
 @media screen {

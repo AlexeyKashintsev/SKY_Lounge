@@ -182,3 +182,12 @@ p.artist {
 p.song-title {
 	font-size: small;
 }
+
+div#main-logo {
+    background-image: url('./../images/logo.png');
+    background-size: contain;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    margin: 30px;
+}

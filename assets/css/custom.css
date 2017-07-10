@@ -215,22 +215,38 @@ div#main-logo {
 }
 
 @media screen and (max-width: 700px){
-    
-/*
-    div.player {
-        position: fixed;
-        right: 15px;
-    }
-    
-    div.play-description {
-        margin-left: 53px;
-    }
-    
-    div.play-button{
-        margin-right: 220px;
-    }
-*/
     div.player-cont{
         margin-right: 10px;
+        position: absolute;
+        right: 0px;
+        width: 270px;
+        padding: 0;
     }
+    
+    .container{
+        margin-top:120px;
+    }
+    
+    
+}
+
+#btnPayment{
+    background-color: rgba(25, 25, 25, 0.2);
+    color: white;
+    font-size: 22px;
+    padding: 15px;
+    padding-top: 10px;
+    margin-top: 100px;
+    border: none;
+}
+
+#btnPayment:focus {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-color: rgba(25, 25, 25, 0.8);  
+    text-decoration: none;
+}
+
+#btnPayment:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
 }

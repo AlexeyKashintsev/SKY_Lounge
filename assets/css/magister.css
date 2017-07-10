@@ -119,9 +119,16 @@ body {
 	top:0;
 } 
 @media (min-width: 768px) {
-	.section { padding-top:160px;}
+	.section {
+        padding-top:160px;
+    }
 }
 
+@media (max-width: 800px) {
+	.section {
+        padding-bottom:20px;
+    }
+}
 /* Show one of sections */
 #head { 
 	display: block;

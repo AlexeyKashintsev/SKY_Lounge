@@ -1,0 +1,7 @@
+.list-empty{
+    list-style-type: none;   
+}
+
+input {
+    margin-left:inherit;
+}

@@ -6,7 +6,7 @@
 	<meta name="description" content="ASAFA.SPACE Эко фестиваль на Асафовых">
 	<meta name="author"      content="Alexey Kashintsev, Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>SKY Lounge Club</title>
+	<title>ASAFA</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 	
@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="assets/css/custom.css">
 	<link rel="stylesheet" href="assets/css/fonts/exotwo.css">
 	<link rel="stylesheet" href="assets/css/magister.css">
+    <link rel="stylesheet" href="assets/css/payment.css">
         
 	<!-- Fonts -->
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -28,8 +29,13 @@
 	<script src="assets/js/berniecode-animator.js"></script>
 	<script src="assets/js/soundmanager2.js"></script>
         <script src="assets/js/player.js"></script>
-        
-        <script type="text/javascript" src="web/pwc/pwc.nocache.js"></script>
+    
+    <!--Телефон-->
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.maskedinput.js"></script>
+    
+    
+    <script type="text/javascript" src="web/pwc/pwc.nocache.js"></script>
 	<!--script type="text/javascript" src="app/start.js"></script-->
 	<!--script src="assets/js/wimpy.js"></script-->
         <!--link rel="stylesheet" type="text/css" href="web/pwc/reset.css" /-->
@@ -119,6 +125,8 @@
 		<div class="row">
 			<div class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2 text-center guest-welcome">
 				<!--TODO Вставлять сюда по программе-->
+                
+                
 			</div>
 		</div>
 	</div>
@@ -131,9 +139,82 @@
 
 		<!--h2 class="text-center title">SKY Lounge Club</h2-->
 
-		<div class="row">
-			<div class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2 text-center guest-welcome">
-				<!--TODO Вставлять сюда по оплате-->
+		<div style="color: white; font-size: 16px" class="row">
+			<div style="font-size: 14px" class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2  guest-welcome"> <!-- Атрибут был "text-center" -->
+                <h1 class="text-center">Участие</h1>
+                <p>
+                    Для участия в фестивале необходимо внести организационный взнос. Для этого регистрируемся в форме ниже, и следующим шагом выбираем наиболее удобный способ оплаты, далее после подтверждения платежа вам будет отправлен уникальный код (по одному на каждого участника), который понадобится Вам на входе!
+                </p>
+                <h1 class="text-center"> Оплата </h1>
+
+                По вопросам, связанным с оплатой организационного взноса а также с его возвратом, вы можете обратиться по телефону: +7 (962) 161-42-77.
+                <ul style="list-style-type: none; padding: 10px"> 
+                    <p allign="center"> E-Mail<sup>*</sup>: 
+                        <li>
+                            <input type="text" name="e-mail">
+                        </li>                    
+                        <sub allign="center"><sup>*</sup>Понадобится для доступа к статусу заказа и получения уникального кода после завершения оплаты организационного взноса</sub>
+                    </p> 
+                    <p>
+                        Телефон:
+                        <li>
+                            <input id="phone" type="text"> 
+<!--                            pattern="+7-([0-9]{3})-[0-9]{3}-[0-9]{2}-[0-9]{2}"-->
+                            <script>
+                                $(function($){
+                                  $("#phone").mask("+7(999) 999-99-99");
+                                });
+                            </script>
+                        </li>
+                    </p>
+                    <p>
+                        Имя: <li><input type="text" name="Name"></li>
+                    </p>
+                    <p>  
+                        Фамилия: <li><input type="text" name="Surname"></li>
+                    </p>
+                
+                
+                    Трансфер: <input type="checkbox" name="Transfer">   
+                </ul>
+                
+                <p allign="center"> 
+                        <input type="checkbox" name="I accept"> Я согласен с условиями <a href="https://vashasobaka.ru/">публичной оферты</a>.
+                </p>
+                
+                <h3>Финансовое соглашение:</h3>
+                <ul>                
+                    <li> Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «http://asafa.space».</li>
+                    <li> Услуги предоставляются Участнику на условиях 100% предоплаты стоимости Услуги.</li>
+                    <li> Реквизиты для оплаты услуг размещены на сайте «http://asafa.space».</li>
+                    <li> Оплаченный Участником организационный взнос, в случае прекращения действия Договора, не возвращается.</li>
+                </ul>
+                
+                <h3>Механизм возврата средств:</h3>
+                <ul>
+                    <li>Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «http://asafa.space».</li>
+                    <li>Услуги предоставляются Участнику на условиях 100% предоплаты стоимости Услуги.</li>
+                    <li>Реквизиты для оплаты услуг размещены на сайте «http://asafa.space».</li>
+                    <li>Оплаченный Участником организационный взнос, в случае прекращения действия Договора, не возвращается.</li>
+                </ul>
+
+                <h3>Порядок и условия возврата товара (отказа от услуги) и возврата средств</h3>
+                <ul>
+                    <li>Возврат денежных средств по заказам онлайн, оплаченным картой, производится обратно на карту. Срок перечисления денежных средств 3—15 дней в зависимости от банка-эмитента.</li>
+                    <li>Возврат можно произвести написав на почту <a href="info@asafa.space">info@asafa.space</a> с темой "Возврат"</li>
+                </ul>
+
+                <h3>Информация о мерах по обеспечению безопасности Операций с использованием Карт</h3>
+                <ul>
+                    <li>Оплата происходит через авторизационный сервер Процессингового центра Payture с использованием Банковских платежных карт Visa, MasterCard.</li>
+                    <li>Для осуществления платежа Вам потребуется сообщить данные Вашей пластиковой карты. Передача этих сведений производится с соблюдением всех необходимых мер безопасности. Данные будут сообщены только на авторизационный сервер Payture по защищенному каналу. </li>
+                    <li>При выборе формы оплаты с помощью пластиковой карты проведение платежа по заказу производится непосредственно после его оформления. После завершения оформления заказа на нашем сайте, Вы должны будете выбрать вариант оплаты картой, при этом система переключит Вас на страницу авторизационного сервера, где Вам будет предложено ввести данные пластиковой карты, после чего будет инициирована авторизация карты, а Вы автоматически будете перемещены на наш сайт. При этом система уведомит Вас о результатах авторизации. В случае подтверждения авторизации Ваш заказ будет автоматически выполнен в соответствии с заданными Вами условиями. </li>
+                    <li>В случае отказа в авторизации Вы сможете повторить процедуру оплаты. Повышенная защита платежей может обеспечиваться 3D Secure — технологией, которая является дополнительным уровнем безопасности платежей для онлайн-кредитных и дебетных карт. </li>
+                    <li>В случае если карта поддерживает технологию 3D Secure, в процессе авторизации будет запрошен дополнительный одноразовый пароль, способ получения которого зависит от банка.</li>
+                </ul>
+                Внизу реквизиты организации: Региональная Общественная Организация
+                "Георгиевское Землячество"
+                
 			</div>
 		</div>
 	</div>

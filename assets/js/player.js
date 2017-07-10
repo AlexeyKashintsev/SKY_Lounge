@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 window.onload = function(){
-    //wimpyButton.play('assets/sound/1.mp3');
+    //wimpyButton.play('assets/sound/3.mp3');
     var isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
@@ -38,7 +38,7 @@ window.onload = function(){
     };
     
     mp3 = soundManager.createSound({
-        url: 'assets/sound/1.mp3',
+        url: 'assets/sound/3.mp3',
         autoPlay: false,
 	//ignoreMobileRestrictions: true,
         pan: -75,

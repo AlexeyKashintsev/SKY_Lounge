@@ -23,8 +23,4 @@ jQuery(document).ready(function($) {
 		}
 		return false;
 	});		
-	
-	$(".navbar-toggle").click(function){
-		$("section").css("marginTop", "200px");
-	}
 });

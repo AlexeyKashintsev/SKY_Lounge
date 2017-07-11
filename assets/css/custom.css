@@ -233,7 +233,7 @@ div#main-logo {
 }
 
 #btnPayment{
-    background-color: rgba(25, 25, 25, 0.2);
+    background-color: rgba(66, 139, 202, 0.7);
     color: white;
     font-size: 22px;
     padding: 15px;
@@ -263,7 +263,7 @@ div#main-logo {
     color: burlywood;
 }
 .links:visited {
-    color: darkorchid;
+    color: darkgray;
 }
 form {
     padding-bottom: 50px;

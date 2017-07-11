@@ -243,12 +243,31 @@ div#main-logo {
 }
 
 #btnPayment:focus {
-    background-color: rgba(255, 255, 255, 0.6);
+    color: bisque;
+    background-color: rgba(64, 207, 255, 0.4);
     border-color: rgba(25, 25, 25, 0.8);  
     text-decoration: none;
 }
 
 #btnPayment:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(64, 207, 255, 0.1);
     text-decoration: none;
+}
+.links{
+    color: darkturquoise;
+}
+.links:hover {
+    color:bisque;
+}
+.links:focus {
+    color: burlywood;
+}
+.links:visited {
+    color: darkorchid;
+}
+form {
+    padding-bottom: 50px;
+}
+.btnsend{
+ text-align: center;
 }

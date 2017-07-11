@@ -35,6 +35,9 @@
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.maskedinput.js"></script>
     
+    <!-- Checkboxes-->
+    <script src="assets/js/checkbox-catcher.js"></script>
+    
     
     <script type="text/javascript" src="web/pwc/pwc.nocache.js"></script>
 	<!--script type="text/javascript" src="app/start.js"></script-->
@@ -87,7 +90,7 @@
 <section class="section" id="head">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2 text-center guest-welcome">
+			<div class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2 text-center guest-welcome mCustomScrollbar">
 				<div id="main-logo"></div>
 				<!-- Site Title, your name, HELLO msg, etc. -->
 				<h1 class="title" id='h_story'>на Асафовых островах<br>г. Юрьевец</h1>
@@ -224,8 +227,9 @@
                         Фамилия: <li><input type="text" name="Surname"></li>
                     </p>
                 
-                
-                    Трансфер: <input type="checkbox" name="Transfer">   
+                    <p>
+                        Трансфер: <input type="checkbox" id="transferCheck"> Переправа: <input type="checkbox" id="ferryCheck">
+                    </p>
                 </ul>
                 
                 <p allign="center"> 
@@ -238,6 +242,8 @@
 		</div>
     </div>    
 </section>   
+    
+    
 <!-- Fourth (Contact) section -->
 <section class="section" id="contact">
 	<div class="container">

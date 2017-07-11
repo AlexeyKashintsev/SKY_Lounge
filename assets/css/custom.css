@@ -238,7 +238,7 @@ div#main-logo {
     font-size: 22px;
     padding: 15px;
     padding-top: 10px;
-    margin-top: 100px;
+    margin-top: 75px;
     border: none;
 }
 
@@ -269,5 +269,8 @@ form {
     padding-bottom: 50px;
 }
 .btnsend{
- text-align: center;
+    text-align: center;
+    align-self: center;
+    margin-left: 44%;
+    padding-top: 8px;
 }

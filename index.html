@@ -208,7 +208,7 @@
             
                     <p allign="center"> E-Mail<sup>*</sup>: 
                         <li>
-                            <input type="text" name="e-mail">
+                            <input type="text" id="email" name="e-mail">
                         </li>                    
                         <sub allign="center"><sup>*</sup>Понадобится для доступа к статусу заказа и получения уникального кода после завершения оплаты организационного взноса</sub>
                     </p> 
@@ -225,10 +225,10 @@
                         </li>
                     </p>
                     <p>
-                        Имя: <li><input type="text" name="name"></li>
+                        Имя: <li><input type="text" id ="name" name="name"></li>
                     </p>
                     <p>  
-                        Фамилия: <li><input type="text" name="surname"></li>
+                        Фамилия: <li><input type="text" id="surname" name="surname"></li>
                     </p>
                     <p>
                         <input type="checkbox" id="ticketCheck">Организационный взнос (билеты на мероприятие, включая эко-сбор) - <b>1000 рублей</b>
@@ -267,8 +267,11 @@
                 
                 <p allign="center"> 
                         <input type="checkbox" id="oferta" name="accept"> Я согласен с условиями <a class="links" id="ofertalink" href="#pay-info">публичной оферты</a>.
-                </p>                  
-                        <input class="btnsend" type="submit" name="btnSend" id="btnSend" value="Отправить">
+                </p>       
+                    <div> 
+                        <input class="btnsend" type="submit" name="btnSend" id="btnSend" value="Отправить" disabled="true">
+                    </div>
+                       
                 </form>
               </div>
 		</div>

@@ -11,12 +11,19 @@ jQuery(document).ready(function($) {
 		}		
     });
 	
-	$("#oferta", "input:checkbox").click(function(){
+	//$("#oferta").click(function(){
+	$("#btnSend").parent().mouseover(function(){
 		btn = $("#btnSend");
-		if ($("#oferta")[0].checked == false){
-			btn[0].disabled = true;
-		} else{
+		var mas = $("input:text");
+		var flag = false;
+		mas.each(function (txtfield){
+			if (txtfield.value == '')
+				flag = true;
+		});
+		if (($("#oferta")[0].checked == true)&&($("input:radio:checked").length>4)&&(flag == false)){
 			btn[0].disabled = false;
+		} else{
+			btn[0].disabled = true;
 		};
 	});
 });

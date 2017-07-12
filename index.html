@@ -200,7 +200,28 @@
         <div style="color: white; font-size: 16px" class="row">
 			<div style="font-size: 14px; margin-bottom: 30px;" class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2  guest-welcome mCustomScrollbar"> 
             <h1 style="text-align: center">Подача заявки</h1>
-                <form action="" name="payment">
+                
+                
+                
+                
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <form action="http://asafa.test/userform.php" method="post">
                 <ul style="list-style-type: none; padding: 10px"> 
             
                     <p allign="center"> E-Mail<sup>*</sup>: 
@@ -212,7 +233,7 @@
                     <p>
                         Телефон:
                         <li>
-                            <input id="phone" type="text"> 
+                            <input id="phone" type="text" name="phone"> 
 <!--                            pattern="+7-([0-9]{3})-[0-9]{3}-[0-9]{2}-[0-9]{2}"-->
                             <script>
                                 $(function($){
@@ -222,10 +243,10 @@
                         </li>
                     </p>
                     <p>
-                        Имя: <li><input type="text" name="Name"></li>
+                        Имя: <li><input type="text" name="name"></li>
                     </p>
                     <p>  
-                        Фамилия: <li><input type="text" name="Surname"></li>
+                        Фамилия: <li><input type="text" name="surname"></li>
                     </p>
                 
                     <p>
@@ -235,9 +256,8 @@
                 
                 <p allign="center"> 
                         <input type="checkbox" name="I accept"> Я согласен с условиями <a class="links" id="ofertalink" href="#pay-info">публичной оферты</a>.
-                </p>
-                
-                <input class="btnsend" type="submit" name="Send" value="Отправить">
+                </p>                  
+                        <input class="btnsend" type="submit" name="Send" value="Отправить">
                 </form>
               </div>
 		</div>

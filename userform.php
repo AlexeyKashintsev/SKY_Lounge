@@ -18,8 +18,6 @@
     fclose($file); 
     }
 echo " Ваша заявка успешно принята!";
-$phone=$_POST['phone'];        
-echo "$phone";
  ?>
     </body>
 </html>

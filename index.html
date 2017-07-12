@@ -153,21 +153,21 @@
 
                 По вопросам, связанным с оплатой организационного взноса а также с его возвратом, вы можете обратиться по телефону: +7 (962) 161-42-77.
                 <br><br>
-                <p style="text-align: center; margin: 22px;"><a  href="#payment" name="btnPayment" id="btnPayment">Оформить завку</a></p>
+                <p style="text-align: center; margin: 8px;"><a  href="#payment" class="btnPayment" id="btnPayment">Оформить заявку</a></p>
                 
                 <h3>Финансовое соглашение:</h3>
                 <ul>                
-                    <li> Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «http://asafa.space».</li>
+                    <li> Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «<a class="links" href="http://asafa.space">http://asafa.space"</a>».</li>
                     <li> Услуги предоставляются Участнику на условиях 100% предоплаты стоимости Услуги.</li>
-                    <li> Реквизиты для оплаты услуг размещены на сайте «http://asafa.space».</li>
+                    <li> Реквизиты для оплаты услуг размещены на сайте «<a class="links" href="http://asafa.space">http://asafa.space"</a>».</li>
                     <li> Оплаченный Участником организационный взнос, в случае прекращения действия Договора, не возвращается.</li>
                 </ul>
                 
                 <h3>Механизм возврата средств:</h3>
                 <ul>
-                    <li>Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «http://asafa.space».</li>
+                    <li>Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «<a class="links" href="http://asafa.space">http://asafa.space"</a>».</li>
                     <li>Услуги предоставляются Участнику на условиях 100% предоплаты стоимости Услуги.</li>
-                    <li>Реквизиты для оплаты услуг размещены на сайте «http://asafa.space».</li>
+                    <li>Реквизиты для оплаты услуг размещены на сайте «<a class="links" href="http://asafa.space">http://asafa.space"</a>».</li>
                     <li>Оплаченный Участником организационный взнос, в случае прекращения действия Договора, не возвращается.</li>
                 </ul>
 
@@ -199,27 +199,9 @@
     <div class="container">
         <div style="color: white; font-size: 16px" class="row">
 			<div style="font-size: 14px; margin-bottom: 30px;" class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2  guest-welcome mCustomScrollbar"> 
-            <h1 style="text-align: center">Подача заявки</h1>
+            <h1 style="text-align: center">Подача заявки</h1>             
                 
-                
-                
-                
-                
-
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+            
                 
                 <form action="http://asafa.test/userform.php" method="post">
                 <ul style="list-style-type: none; padding: 10px"> 
@@ -248,16 +230,45 @@
                     <p>  
                         Фамилия: <li><input type="text" name="surname"></li>
                     </p>
-                
                     <p>
-                        Трансфер: <input type="checkbox" id="transferCheck"> Переправа: <input type="checkbox" id="ferryCheck">
+                        <input type="checkbox" id="ticketCheck">Организационный взнос (билеты на мероприятие, включая эко-сбор) - <b>1000 рублей</b>
                     </p>
+                    <p>
+                        <input type="checkbox" id="transferCheck">Трансфер Иваново-Юрьевец и обратно - <b>800 рублей</b>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="ferryCheck">Переправа Юрьевец-Асафовы острова и обратно - <b>400 рублей</b>
+                    </p>
+                    <p>
+                        Во сколько Вам удобнее выехать из Иваново (от "Магнита" у автовокзала) в пятницу 4.08?
+                    </p>
+                    
+                    <p> <input id="time" name="time" type="radio" value="17.00" class="none-border">17:00</p>
+                    <p> <input name="time" type="radio" value="18.00" class="none-border">18:00</p>
+                    <p> <input name="time" type="radio" value="19.00" class="none-border">19:00</p>
+                    <p> <input name="time" type="radio" value="dontneed" class="none-border">Мне не нужен трансфер, я доберусь самостоятельно</p>
+                    
+                    <p>Поедете ли Вы на мероприятие в случае нестабильной погоды?</p>
+                    <p> <input name="weather" type="radio" value="yes" class="none-border">Да</p>
+                    <p> <input name="weather" type="radio" value="no" class="none-border">Нет</p>
+                    
+                    <p>Готовы ли Вы поехать на мероприятие, если из-за погоды его придется перенести на 11-12-13 августа?</p>
+                    <p> <input name="transf" type="radio" value="yes" class="none-border">Да</p>
+                    <p> <input name="transf" type="radio" value="no" class="none-border">Нет, я сдам билет</p>
+                    
+                    <p>Собираетесь ли Вы участвовать в конкурсе экологических видеопроектов? (Участие добровольное)</p>
+                    <p> <input name="participation" type="radio" value="yes" class="none-border">Да</p>
+                    <p> <input name="participation" type="radio" value="no" class="none-border">Нет</p>
+                    
+                    <p>Требуется ли Вам палатка для проживания на островах?</p>
+                    <p> <input name="tent" type="radio" value="yes" class="none-border">Да</p>
+                    <p> <input name="tent" type="radio" value="no" class="none-border">Нет</p>
                 </ul>
                 
                 <p allign="center"> 
-                        <input type="checkbox" name="I accept"> Я согласен с условиями <a class="links" id="ofertalink" href="#pay-info">публичной оферты</a>.
+                        <input type="checkbox" id="oferta" name="accept"> Я согласен с условиями <a class="links" id="ofertalink" href="#pay-info">публичной оферты</a>.
                 </p>                  
-                        <input class="btnsend" type="submit" name="Send" value="Отправить">
+                        <input class="btnsend" type="submit" name="btnSend" id="btnSend" value="Отправить">
                 </form>
               </div>
 		</div>

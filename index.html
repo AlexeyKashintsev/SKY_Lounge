@@ -68,7 +68,7 @@
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             <li><a href="#head" id="head1btn">Главная</a></li>
                             <li><a href="#program" id="head2btn">Программа фестиваля</a></li>
-                            <li><a href="#pay-info" id="head3btn">Орг. взнос</a></li>
+                            <li><a href="#pay-info" id="head3btn">Заявка на участие</a></li>
                             <li><a href="#contact">Контакты</a></li>
                     </ul>
             </div>
@@ -153,21 +153,25 @@
 
                 По вопросам, связанным с оплатой организационного взноса а также с его возвратом, вы можете обратиться по телефону: +7 (962) 161-42-77.
                 <br><br>
-                <p style="text-align: center; margin: 8px;"><a  href="#payment" class="btnPayment" id="btnPayment">Оформить заявку</a></p>
+        <div style="text-align: center">
+                <p style="margin: 8px"><a  href="#payment" class="btnPayment" id="btnPayment">Оформить заявку</a>
                 
+                <a style="margin: 8px;"  href="#paid" class="btnPayment" id="btnPaid">Уже оплатил(а)</a></p>
+        </div>        
+                <br>
                 <h3>Финансовое соглашение:</h3>
                 <ul>                
-                    <li> Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «<a class="links" href="http://asafa.space">http://asafa.space"</a>».</li>
+                    <li> Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «<a class="links" href="http://asafa.space">http://asafa.space</a>».</li>
                     <li> Услуги предоставляются Участнику на условиях 100% предоплаты стоимости Услуги.</li>
-                    <li> Реквизиты для оплаты услуг размещены на сайте «<a class="links" href="http://asafa.space">http://asafa.space"</a>».</li>
+                    <li> Реквизиты для оплаты услуг размещены на сайте «<a class="links" href="http://asafa.space">http://asafa.space</a>».</li>
                     <li> Оплаченный Участником организационный взнос, в случае прекращения действия Договора, не возвращается.</li>
                 </ul>
                 
                 <h3>Механизм возврата средств:</h3>
                 <ul>
-                    <li>Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «<a class="links" href="http://asafa.space">http://asafa.space"</a>».</li>
+                    <li>Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «<a class="links" href="http://asafa.space">http://asafa.space</a>».</li>
                     <li>Услуги предоставляются Участнику на условиях 100% предоплаты стоимости Услуги.</li>
-                    <li>Реквизиты для оплаты услуг размещены на сайте «<a class="links" href="http://asafa.space">http://asafa.space"</a>».</li>
+                    <li>Реквизиты для оплаты услуг размещены на сайте «<a class="links" href="http://asafa.space">http://asafa.space</a>».</li>
                     <li>Оплаченный Участником организационный взнос, в случае прекращения действия Договора, не возвращается.</li>
                 </ul>
 
@@ -231,13 +235,13 @@
                         Фамилия: <li><input type="text" id="surname" name="surname"></li>
                     </p>
                     <p>
-                        <input type="checkbox" id="ticketCheck">Организационный взнос (билеты на мероприятие, включая эко-сбор) - <b>1000 рублей</b>
+                        <input type="checkbox" id="ticketCheck" checked="true" disabled="true">Организационный взнос (билеты на мероприятие, включая эко-сбор) - <b>1000 рублей</b>
                     </p>
                     <p>
-                        <input type="checkbox" id="transferCheck">Трансфер Иваново-Юрьевец и обратно - <b>800 рублей</b>
+                        <input type="checkbox" name="transfer" id="transferCheck">Трансфер Иваново-Юрьевец и обратно - <b>800 рублей</b>
                     </p>
                     <p>
-                        <input type="checkbox" id="ferryCheck">Переправа Юрьевец-Асафовы острова и обратно - <b>400 рублей</b>
+                        <input type="checkbox" name="ferry" id="ferryCheck">Переправа Юрьевец-Асафовы острова и обратно - <b>400 рублей</b>
                     </p>
                     <p>
                         Во сколько Вам удобнее выехать из Иваново (от "Магнита" у автовокзала) в пятницу 4.08?
@@ -253,8 +257,8 @@
                     <p> <input name="weather" type="radio" value="no" class="none-border">Нет</p>
                     
                     <p>Готовы ли Вы поехать на мероприятие, если из-за погоды его придется перенести на 11-12-13 августа?</p>
-                    <p> <input name="transf" type="radio" value="yes" class="none-border">Да</p>
-                    <p> <input name="transf" type="radio" value="no" class="none-border">Нет, я сдам билет</p>
+                    <p> <input name="change" type="radio" value="yes" class="none-border">Да</p>
+                    <p> <input name="change" type="radio" value="no" class="none-border">Нет, я сдам билет</p>
                     
                     <p>Собираетесь ли Вы участвовать в конкурсе экологических видеопроектов? (Участие добровольное)</p>
                     <p> <input name="participation" type="radio" value="yes" class="none-border">Да</p>
@@ -267,16 +271,40 @@
                 
                 <p allign="center"> 
                         <input type="checkbox" id="oferta" name="accept"> Я согласен с условиями <a class="links" id="ofertalink" href="#pay-info">публичной оферты</a>.
-                </p>       
-                    <div> 
-                        <input class="btnsend" type="submit" name="btnSend" id="btnSend" value="Отправить" disabled="true">
-                    </div>
-                       
+                </p>                  
+                        <input class="btnsend" type="submit" name="btnSend" id="btnSend" value="Оплатить">
                 </form>
               </div>
 		</div>
     </div>    
-</section>   
+</section>
+     
+    
+<!-- Paid section -->
+<section class="section" id="paid">
+    <div class="container">
+        <div style="color: white; font-size: 16px" class="row">
+			<div style="font-size: 14px; margin-bottom: 30px;" class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2  guest-welcome mCustomScrollbar">     
+                <h1 style="text-align: center">Подтверждение оплаты</h1>             
+                    <form action="http://asafa.test/paid.php" method="post">
+                        <ul style="list-style-type: none; padding: 10px">
+                            <p allign="center"> ID: 
+                                <li>
+                                <input type="text" name="id">
+                            </li>
+                        </p>
+                            <p>
+                        № Квитанции об оплате: <li><input type="text" name="number"></li>
+                        </p>
+                            <input style="font-size: 150%" class="btncheck" type="submit" name="btnCheck" id="btnCheck" value="Подтвердить оплату">    
+                            <p allign="center"><sub><sup>*</sup>После подтверждения билеты будут высланы на Ваш e-mail, указанный в заявке.</sub>
+                        </p>
+                    </ul>
+                </form>    
+            </div>
+		</div>
+    </div>    
+</section>
     
     
 <!-- Fourth (Contact) section -->

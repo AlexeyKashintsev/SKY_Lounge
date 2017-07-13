@@ -230,7 +230,7 @@ div#main-logo {
     }    
 }
 
-#btnPayment{
+a.btnPayment{
     background-color: rgba(66, 139, 202, 0.7);
     color: white;
     font-size: 22px;
@@ -242,17 +242,31 @@ div#main-logo {
     text-align: center; 
 }
 
-#btnPayment:focus {
+a.btnPayment:focus {
     color: bisque;
     background-color: rgba(64, 207, 255, 0.4);
     border-color: rgba(25, 25, 25, 0.8);  
     text-decoration: none;
 }
 
-#btnPayment:hover {
+a.btnPayment:hover {
+    color: white;
     background-color: rgba(64, 207, 255, 0.1);
     text-decoration: none;
 }
+
+a.btnPayment:visited {
+    background-color: rgba(66, 139, 202, 0.7);
+    color: white;
+    font-size: 22px;
+    padding: 15px;
+    padding-top: 10px;
+    margin: 22px;
+    margin-top: 60px;
+    border: none;
+    text-align: center;
+}
+    
 .links{
     color: darkturquoise;
 }
@@ -272,6 +286,11 @@ form {
     text-align: center;
     margin: 20px;
     margin-left: 44%;
+    padding-top: 8px;
+}
+
+.btncheck{
+    text-align: center;
     padding-top: 8px;
 }
 

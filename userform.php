@@ -7,7 +7,9 @@
 	$str1 = "name$i";
 	$str2 = "surname$i";
 	fwrite($file,"Участник$i:\r\n");
+	fwrite($file,"Имя: ");
 	fputs($file,$_POST[$str1]."\r\n"); //записать содержимое формы
+	fwrite($file,"Фамилия: ");
 	fputs($file,$_POST[$str2]."\r\n"); //записать содержимое формы
 	}
     fputs($file,$_POST['phone']."\r\n"); //записать содержимое формы
@@ -47,9 +49,9 @@
         fwrite($file, 'Палатка не нужна'."\r\n");
     };
     fwrite($file, 'Сумма к оплате: ');
-	fputs($file, $_POST['containerPrice']."\r\n\");	
+	fputs($file, $_POST['containerPrice']);	
     $a = uniqid(sh);
-	fwrite($file, 'id: ');
+	fwrite($file, "\r\n".'id: ');
 	fputs($file, $a."\r\n");
 	fwrite($file, "\r\n");	
 	fclose($file); 

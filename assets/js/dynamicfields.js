@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    var ticketPrice = 1000, transferPrice = 800, ferryPrice = 400, numOfPeople = 1;
+    var numOfPeople = 1;
     var price;
     checkPrice();
     
@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
         sum = sum * +($("#selectPeople").val());  
         price = $('<b/>', {
           id : totalPrice
-          }).html(sum).appendTo($('#containerPrice'));
+          }).html(sum+' Рублей').appendTo($('#containerPrice'));
     }
     
     $("#selectPeople").change(function(){
@@ -38,9 +38,7 @@ jQuery(document).ready(function($) {
         var div = $('<div/>', {
             'class' : 'DynamicExtraField' + participant
         }).appendTo($('#customerBlock'));
-  //      var div = $('#customerBlock');
         
-//        $('<br/>').appendTo(div);
         $('<h3/>').html('Участник ' + participant).appendTo(div);
         
         $('<p/>').html("Имя: ").appendTo(div);

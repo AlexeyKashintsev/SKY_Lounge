@@ -11,7 +11,6 @@ $('document').ready(function($) {
 		}		
     })
 	
-	//$("#oferta").click(function(){
 	$("#btnSend").parent().mouseover(function(){
 		btn = $("#btnSend");
 		/*var mas = $("input:text");

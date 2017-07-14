@@ -2,10 +2,13 @@
   if ($_SERVER['REQUEST_METHOD'] == 'POST') 
     { 
     $file=fopen('E:\Altsoft\ASAFA1\orders.txt','a+');
-	$n=$_POST['selectPeople'];
-	for ($i=1; i<$n;$i++){ 
-	fputs($file,$_POST['name'+$i]."\r\n"); //записать содержимое формы
-	fputs($file,$_POST['surname'+$i]."\r\n"); //записать содержимое формы
+	$n = isset($_POST['selectPeople']) ? $_POST['selectPeople'] : "";
+	for ($i=1; $i<=$n;$i++){ 
+	$str1 = "name$i";
+	$str2 = "surname$i";
+	fwrite($file,"Участник$i:\r\n");
+	fputs($file,$_POST[$str1]."\r\n"); //записать содержимое формы
+	fputs($file,$_POST[$str2]."\r\n"); //записать содержимое формы
 	}
     fputs($file,$_POST['phone']."\r\n"); //записать содержимое формы
     fputs($file,$_POST['e-mail']."\r\n"); //записать содержимое формы
@@ -43,7 +46,8 @@
     } else {
         fwrite($file, 'Палатка не нужна'."\r\n");
     };
-    fputs($file, $_POST['totalPrice']);	
+    fwrite($file, 'Сумма к оплате: ');
+	fputs($file, $_POST['containerPrice']."\r\n\");	
     $a = uniqid(sh);
 	fwrite($file, 'id: ');
 	fputs($file, $a."\r\n");

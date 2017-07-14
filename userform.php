@@ -1,7 +1,3 @@
-<!DOСTYPE html>
-<html>
-    <body>
-    <meta charset="utf-8">
 <?php
   if ($_SERVER['REQUEST_METHOD'] == 'POST') 
     { 
@@ -44,12 +40,11 @@
     } else {
         fwrite($file, 'Палатка не нужна'."\r\n");
     }; 
-    fwrite($file, "\r\n");	
-    fclose($file); 
+    $a = uniqid(sh);
+	fwrite($file, 'id: ');
+	fputs($file, $a."\r\n");
+	fwrite($file, "\r\n");	
+	fclose($file); 
     }
-    $name=$_POST['name'];
-    $surname=$_POST['surname'];  
-    echo "$name $surname, Ваша заявка успешно принята!";
+	echo $a;
  ?>
-    </body>
-</html>

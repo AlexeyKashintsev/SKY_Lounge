@@ -279,6 +279,9 @@ a.btnPayment:visited {
 .links:visited {
     color: darkgray;
 }
+.links:active{
+    text-decoration: none;
+}
 form {
     padding-bottom: 50px;
 }
@@ -297,3 +300,26 @@ form {
 .none-border{
     outline: none;
 }
+input[disabled]{
+    background-color:rgba(255,0,0, 0.3)
+}
+/*.buttonlink {
+    color: white;
+    text-decoration: none
+}
+.buttonlink:focus{
+    color: white;
+    text-decoration: none;
+}
+.buttonlink:hover{
+    color: white;
+    text-decoration: none;
+}
+.buttonlink:active{
+    color: white;
+    text-decoration: none;
+}
+.buttonlink:visited{
+    color: white;
+    text-decoration: none
+}*/

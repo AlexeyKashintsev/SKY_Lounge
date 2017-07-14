@@ -1,7 +1,4 @@
-<!DOСTYPE html>
-<html>
-    <body>s
-    <meta charset="utf-8">
+
 <?php
  if ($_SERVER['REQUEST_METHOD'] == 'POST') 
     { 
@@ -13,5 +10,3 @@
  }
     echo "Благодарим за оплату, ожидайте подтверждения по e-mail.";
  ?>
-    </body>
-</html>

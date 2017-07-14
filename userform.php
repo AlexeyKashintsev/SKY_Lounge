@@ -2,8 +2,11 @@
   if ($_SERVER['REQUEST_METHOD'] == 'POST') 
     { 
     $file=fopen('E:\Altsoft\ASAFA1\orders.txt','a+');
-    fputs($file,$_POST['name']."\r\n"); //записать содержимое формы
-    fputs($file,$_POST['surname']."\r\n"); //записать содержимое формы
+	$n=$_POST['selectPeople'];
+	for ($i=1; i<$n;$i++){ 
+	fputs($file,$_POST['name'+$i]."\r\n"); //записать содержимое формы
+	fputs($file,$_POST['surname'+$i]."\r\n"); //записать содержимое формы
+	}
     fputs($file,$_POST['phone']."\r\n"); //записать содержимое формы
     fputs($file,$_POST['e-mail']."\r\n"); //записать содержимое формы
     $time=$_POST['time'];
@@ -39,7 +42,8 @@
         fwrite($file, 'Нужна палатка'."\r\n");
     } else {
         fwrite($file, 'Палатка не нужна'."\r\n");
-    }; 
+    };
+    fputs($file, $_POST['totalPrice']);	
     $a = uniqid(sh);
 	fwrite($file, 'id: ');
 	fputs($file, $a."\r\n");

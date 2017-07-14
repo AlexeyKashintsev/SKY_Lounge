@@ -48,6 +48,7 @@ $('document').ready(function($) {
         });
     }
 
+/*
 $('#btnSend').submit(function() {
     current_item = this;
     $('.section:visible').fadeOut( section_hide_time, function() {
@@ -56,10 +57,10 @@ $('#btnSend').submit(function() {
         new_section.fadeIn( section_show_time );
     } );
     })
+*/
     
     
     $("#paidform").submit(function(evt){ 
-      debugger
         checkpay(); 
         evt.preventDefault();
     });
@@ -68,6 +69,7 @@ $('#btnSend').submit(function() {
  	  var msg   = $('#paidform').serialize();
         $.ajax({
           type: 'POST',
+          url: 'paid.php',
           url: 'paid.php',
           data: msg,
           success: function(data) {
@@ -78,18 +80,4 @@ $('#btnSend').submit(function() {
           }
         });
     }
-    
-    
-    
-    
-    $('#btnCheck').submit(function() {
-    current_item = this;
-    $('.section:visible').fadeOut( section_hide_time, function() {
-        $('a', '.mainmenu').removeClass( 'active' );
-        var new_section = $( $(current_item).attr('href') );
-        new_section.fadeIn( section_show_time );
-    } );
-    })
-    
-    
 })

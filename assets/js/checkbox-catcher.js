@@ -1,4 +1,5 @@
 $('document').ready(function($) {
+    var alertDiv;
     
 	$("#transferCheck").click(function(){
 		var ferry = $("#ferryCheck");
@@ -12,20 +13,40 @@ $('document').ready(function($) {
     })
 	
 	$("#btnSend").parent().mouseover(function(){
-		btn = $("#btnSend");
-		/*var mas = $("input:text");
+		checkAllFields();
+	})
+    
+    $("#btnSend").mouseover(function(){
+		checkAllFields();
+	})
+    
+    $("#oferta").click(function() {
+        checkAllFields();
+    })
+    
+    
+    function checkAllFields(){
+        btn = $("#btnSend");
+		var mas = $("input:text");
 		var flag = false;
 		mas.each(function (txtfield){
 			if (txtfield.value == '')
 				flag = true;
 		});
-		if (($("#oferta")[0].checked == true)&&($("input:radio:checked").length>4)&&(flag == false)){*/
-        if ($('#oferta')[0].checked == true){
+		if (($("#oferta")[0].checked == true)&&($("input:radio:checked").length>4)&&(flag == false)){
+  //      if ($('#oferta')[0].checked == true){
 			btn[0].disabled = false;
+            if (alertDiv) {
+                alertDiv.remove();
+                alertDiv = null;
+            }
 		} else{
 			btn[0].disabled = true;
+            if (alertDiv == null) {
+                    alertDiv = $('<p/>',{class : 'alert1'}).html('Все поля должны быть заполнены!').appendTo($('#blockAlert'));
+            }            
 		};
-	})
+    }
     
     $("#userform").submit(function(evt){ 
       call(); 
@@ -66,6 +87,7 @@ $('#btnSend').submit(function() {
     
     function checkpay() {
  	  var msg   = $('#paidform').serialize();
+        debugger
         $.ajax({
           type: 'POST',
           url: 'paid.php',

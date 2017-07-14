@@ -198,12 +198,9 @@
     <div class="container">
         <div style="color: white; font-size: 16px" class="row">
 			<div style="font-size: 14px; margin-bottom: 30px;" class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2  guest-welcome mCustomScrollbar"> 
-            <h1 style="text-align: center">Подача заявки</h1>             
-                
-            
-                
+            <h1 style="text-align: center">Подача заявки</h1>    
+
                 <form method="post" id="userform">
-                <ul style="list-style-type: none; padding: 10px"> 
             
                     <p allign="center"> E-Mail<sup>*</sup>: </p> 
                         <p>
@@ -226,7 +223,7 @@
                         </p>
                     <p>
                         Выберите количество участников:
-                    <select id="selectPeople">
+                    <select id="selectPeople" name ="selectPeople">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -261,7 +258,7 @@
                     <p>
                         <input type="checkbox" class="priceCheck" value="400" name="ferry" id="ferryCheck">Переправа Юрьевец-Асафовы острова и обратно - <b>400 рублей</b>
                     </p>
-                     <h3 id="containerPrice">Сумма к оплате: <b id="totalPrice"></b></h3>
+                     <h3 id="containerPrice">Сумма к оплате: </h3>
                     
                     <p>
                         Во сколько Вам удобнее выехать из Иваново (от "Магнита" у автовокзала) в пятницу 4.08?
@@ -291,10 +288,10 @@
                 <p allign="center"> 
                         <input type="checkbox" id="oferta" name="accept"> Я согласен с условиями <a class="links" id="ofertalink" href="#pay-info">публичной оферты</a>.
                 </p>      
-                    <div>
+                <div>
                         <input class="btnsend link-to-section" id="btnSend" type="submit" href="#accept" name="btnSend"  value="Оплатить">
-                    </div>
-                </form>
+                </div>
+            </form>
             
             </div>
 		</div>

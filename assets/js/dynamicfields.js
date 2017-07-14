@@ -14,7 +14,8 @@ jQuery(document).ready(function($) {
             if ($('#ferryCheck')[0].checked == true) sum += +($('#ferryCheck')[0].value);
         sum = sum * +($("#selectPeople").val());  
         price = $('<b/>', {
-          id : totalPrice
+          id : 'totalPrice',
+          name : 'totalPrice'
           }).html(sum+' Рублей').appendTo($('#containerPrice'));
     }
     

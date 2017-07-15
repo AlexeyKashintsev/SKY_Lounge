@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="assets/css/magister.css">
     <link rel="stylesheet" href="assets/css/payment.css">
 	<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css">
+    
         
 	<!-- Fonts -->
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -29,11 +30,20 @@
 	<!--[if IE]><script type="text/javascript" src="assets/js/excanvas.js"></script><![endif]-->
 	<script src="assets/js/berniecode-animator.js"></script>
 	<script src="assets/js/soundmanager2.js"></script>
-        <script src="assets/js/player.js"></script>
+    <script src="assets/js/player.js"></script>
     
     <!--Телефон-->
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.maskedinput.js"></script>
+    
+    <!-- Checkboxes-->
+    <script src="assets/js/checkbox-catcher.js"></script>
+    
+    <!--Dynamic Fields-->
+    <script src="assets/js/dynamicfields.js"></script>
+    
+    <!-- Custom Select-->
+
     
     
     <script type="text/javascript" src="web/pwc/pwc.nocache.js"></script>
@@ -63,9 +73,9 @@
                     <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                     <!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li><a href="#head" id="head2btn">Главная</a></li>
+                            <li><a href="#head" id="head1btn">Главная</a></li>
                             <li><a href="#program" id="head2btn">Программа фестиваля</a></li>
-                            <li><a href="#pay-info" id="head2btn">Орг. взнос</a></li>
+                            <li><a href="#pay-info" id="head3btn">Заявка на участие</a></li>
                             <li><a href="#contact">Контакты</a></li>
                     </ul>
             </div>
@@ -87,7 +97,7 @@
 <section class="section" id="head">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2 text-center guest-welcome">
+			<div class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2 text-center guest-welcome mCustomScrollbar">
 				<div id="main-logo"></div>
 				<!-- Site Title, your name, HELLO msg, etc. -->
 				<h1 class="title" id='h_story'>на Асафовых островах<br>г. Юрьевец</h1>
@@ -134,14 +144,14 @@
 </section>
 <!-- END -->
 
-<!-- Third (PAY) section -->
+<!-- Third (Participation) section -->
 <section class="section" id="pay-info">
 	<div class="container">
 
 		<!--h2 class="text-center title">SKY Lounge Club</h2-->
 
 		<div style="color: white; font-size: 16px" class="row">
-			<div style="font-size: 14px" class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2  guest-welcome mCustomScrollbar"> <!-- Атрибут был "text-center" -->
+			<div style="font-size: 14px; margin-bottom: 30px;" class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2  guest-welcome mCustomScrollbar"> <!-- Атрибут был "text-center" -->
                 <h1 class="text-center">Участие</h1>
                 <p>
                     Для участия в фестивале необходимо внести организационный взнос. Для этого регистрируемся в форме ниже, и следующим шагом выбираем наиболее удобный способ оплаты, далее после подтверждения платежа вам будет отправлен уникальный код (по одному на каждого участника), который понадобится Вам на входе!
@@ -149,60 +159,25 @@
                 <h1 class="text-center"> Оплата </h1>
 
                 По вопросам, связанным с оплатой организационного взноса а также с его возвратом, вы можете обратиться по телефону: +7 (962) 161-42-77.
-                <ul style="list-style-type: none; padding: 10px"> 
-                    <p allign="center"> E-Mail<sup>*</sup>: 
-                        <li>
-                            <input type="text" name="e-mail">
-                        </li>                    
-                        <sub allign="center"><sup>*</sup>Понадобится для доступа к статусу заказа и получения уникального кода после завершения оплаты организационного взноса</sub>
-                    </p> 
-                    <p>
-                        Телефон:
-                        <li>
-                            <input id="phone" type="text"> 
-<!--                            pattern="+7-([0-9]{3})-[0-9]{3}-[0-9]{2}-[0-9]{2}"-->
-                            <script>
-                                $(function($){
-                                  $("#phone").mask("+7(999) 999-99-99");
-                                });
-                            </script>
-                        </li>
-                    </p>
-                    <p>
-                        Имя: <li><input type="text" name="Name"></li>
-                    </p>
-                    <p>  
-                        Фамилия: <li><input type="text" name="Surname"></li>
-                    </p>
+                <br><br>
+        <div style="text-align: center">
+                <p style="margin: 8px"><a  href="#payment" class="btnPayment link-to-section" id="btnPayment">Оформить заявку</a>
                 
-                
-                    Трансфер: <input type="checkbox" name="Transfer">   
-                </ul>
-                
-                <p allign="center"> 
-                        <input type="checkbox" name="I accept"> Я согласен с условиями <a href="https://vashasobaka.ru/">публичной оферты</a>.
-                </p>
-                
+                <a style="margin: 8px;"  href="#paid" class="btnPayment link-to-section" id="btnPaid">Уже оплатил(а)</a></p>
+        </div>        
+                <br>
                 <h3>Финансовое соглашение:</h3>
                 <ul>                
-                    <li> Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «http://asafa.space».</li>
+                    <li> Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «<a class="links" href="http://asafa.space">http://asafa.space</a>».</li>
                     <li> Услуги предоставляются Участнику на условиях 100% предоплаты стоимости Услуги.</li>
-                    <li> Реквизиты для оплаты услуг размещены на сайте «http://asafa.space».</li>
+                    <li> Реквизиты для оплаты услуг размещены на сайте «<a class="links" href="http://asafa.space">http://asafa.space</a>».</li>
                     <li> Оплаченный Участником организационный взнос, в случае прекращения действия Договора, не возвращается.</li>
-                </ul>
-                
-                <h3>Механизм возврата средств:</h3>
-                <ul>
-                    <li>Оплата услуг Организатора Участником производится денежными средствами по безналичному расчету на расчетный счет Организатора или иным способом, указанным на сайте «http://asafa.space».</li>
-                    <li>Услуги предоставляются Участнику на условиях 100% предоплаты стоимости Услуги.</li>
-                    <li>Реквизиты для оплаты услуг размещены на сайте «http://asafa.space».</li>
-                    <li>Оплаченный Участником организационный взнос, в случае прекращения действия Договора, не возвращается.</li>
                 </ul>
 
                 <h3>Порядок и условия возврата товара (отказа от услуги) и возврата средств</h3>
                 <ul>
                     <li>Возврат денежных средств по заказам онлайн, оплаченным картой, производится обратно на карту. Срок перечисления денежных средств 3—15 дней в зависимости от банка-эмитента.</li>
-                    <li>Возврат можно произвести написав на почту <a href="info@asafa.space">info@asafa.space</a> с темой "Возврат"</li>
+                    <li>Возврат можно произвести написав на почту <a class="links" href="mailto:info@asafa.space?subject=Возврат">info@asafa.space</a> с темой "Возврат"</li>
                 </ul>
 
                 <h3>Информация о мерах по обеспечению безопасности Операций с использованием Карт</h3>
@@ -222,6 +197,165 @@
 </section>
 <!-- END -->
 
+<!-- Pay section -->
+<section class="section" id="payment">
+    <div class="container">
+        <div style="color: white; font-size: 16px" class="row">
+			<div style="font-size: 14px; margin-bottom: 30px;" class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2  guest-welcome mCustomScrollbar"> 
+            <h1 style="text-align: center">Подача заявки</h1>    
+
+                <form method="post" id="userform">
+            
+                    <p allign="center"> E-Mail<sup>*</sup>: </p> 
+                        <p>
+                            <input type="text" id="email" name="e-mail">
+                        </p>    
+                    <p>
+                        <sub allign="center"><sup>*</sup>Понадобится для доступа к статусу заказа и получения уникального кода после завершения оплаты организационного взноса</sub>
+                    </p> 
+                    <p>
+                        Телефон:
+                    </p>
+                        <p>
+                            <input id="phone" type="text" name="phone"> 
+<!--                            pattern="+7-([0-9]{3})-[0-9]{3}-[0-9]{2}-[0-9]{2}"-->
+                            <script>
+                                $(function($){
+                                  $("#phone").mask("+7(999) 999-99-99");
+                                });
+                            </script>
+                        </p>
+                    <p>
+                        Выберите количество участников:
+                    <select class="selector turnintodropdown" id="selectPeople" name ="selectPeople" >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    </p>
+                    
+                    <h3>Участник 1</h3>                    
+                    <p>
+                        Имя:
+                    </p>
+                    <p>
+                        <input type="text" id ="name1" name="name1">
+                    </p>
+                    <p>  
+                        Фамилия:
+                    </p>                    
+                    <p>
+                        <input type="text" id="surname1" name="surname1">
+                    </p> 
+                    <div id="customerBlock">
+                        
+                    </div>
+                    <br>
+                    <p>
+                        <input type="checkbox" class="priceCheck" value="1000" id="ticketCheck" checked="true" disabled="true">Организационный взнос (билеты на мероприятие, включая эко-сбор) - <b>1000 рублей</b>
+                    </p>
+                    <p>
+                        <input type="checkbox" class="priceCheck" value="800" name="transfer" id="transferCheck">Трансфер Иваново-Юрьевец и обратно - <b>800 рублей</b>
+                    </p>
+                    <p>
+                        <input type="checkbox" class="priceCheck" value="400" name="ferry" id="ferryCheck">Переправа Юрьевец-Асафовы острова и обратно - <b>400 рублей</b>
+                    </p>
+                     <h3 id="containerPrice">Сумма к оплате: </h3>
+                    
+                    <p>
+                        Во сколько Вам удобнее выехать из Иваново (от "Магнита" у автовокзала) в пятницу 4.08?
+                    </p>
+                    
+                    <p> <input id="time" name="time" type="radio" value="17.00" class="none-border">17:00</p>
+                    <p> <input name="time" type="radio" value="18.00" class="none-border">18:00</p>
+                    <p> <input name="time" type="radio" value="19.00" class="none-border">19:00</p>
+                    <p> <input name="time" type="radio" value="dontneed" class="none-border">Мне не нужен трансфер, я доберусь самостоятельно</p>
+                    
+                    <p>Поедете ли Вы на мероприятие в случае нестабильной погоды?</p>
+                    <p> <input name="weather" type="radio" value="yes" class="none-border">Да</p>
+                    <p> <input name="weather" type="radio" value="no" class="none-border">Нет</p>
+                    
+                    <p>Готовы ли Вы поехать на мероприятие, если из-за погоды его придется перенести на 11-12-13 августа?</p>
+                    <p> <input name="change" type="radio" value="yes" class="none-border">Да</p>
+                    <p> <input name="change" type="radio" value="no" class="none-border">Нет, я сдам билет</p>
+                    
+                    <p>Собираетесь ли Вы участвовать в конкурсе экологических видеопроектов? (Участие добровольное)</p>
+                    <p> <input name="participation" type="radio" value="yes" class="none-border">Да</p>
+                    <p> <input name="participation" type="radio" value="no" class="none-border">Нет</p>
+                    
+                    <p>Требуется ли Вам палатка для проживания на островах?</p>
+                    <p> <input name="tent" type="radio" value="yes" class="none-border">Да</p>
+                    <p> <input name="tent" type="radio" value="no" class="none-border">Нет</p>
+                
+                <p allign="center"> 
+                        <input type="checkbox" id="oferta" name="accept"> Я согласен с условиями <a class="links" id="ofertalink" href="#pay-info">публичной оферты</a>.
+                </p>      
+                <div id="blockAlert"></div>
+                <div>
+                        <input class="btnsend link-to-section" id="btnSend" type="submit" href="#accept" name="btnSend"  value="Оплатить">
+                </div>
+            </form>
+            
+            </div>
+		</div>
+    </div>    
+</section>
+     
+    
+<!-- Paid section -->
+<section class="section" id="paid">
+    <div class="container">
+        <div style="color: white; font-size: 16px" class="row">
+			<div style="font-size: 14px; margin-bottom: 30px;" class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2  guest-welcome mCustomScrollbar">     
+                <h1 style="text-align: center">Подтверждение оплаты</h1>             
+                    <form id="paidform" method="post">
+                        <ul style="list-style-type: none; padding: 10px">
+                            <p allign="center"> ID: 
+                                <li>
+                                <input type="text" name="id">
+                            </li>
+                        </p>
+                            <p>
+                        № Квитанции об оплате: <li><input type="text" name="number"></li>
+                        </p>
+                            <input style="font-size: 150%" class="btncheck link-to-section" href="#Checking" type="submit" name="btnCheck" id="btnCheck" value="Подтвердить оплату">    
+                            <p allign="center"><sub><sup>*</sup>После подтверждения билеты будут высланы на Ваш e-mail, указанный в заявке.</sub>
+                        </p>
+                    </ul>
+                </form>    
+            </div>
+		</div>
+    </div>    
+</section>
+    
+<!-- Accept section -->
+<section class="section" id="accept">
+    <div class="container">
+        <div style="color: white; font-size: 16px" class="row">
+			<div style="font-size: 14px; margin-bottom: 30px;" class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2  guest-welcome mCustomScrollbar">       
+                <h4>Ваш id: <span style="color: rgba(0,220,100,0.8)" id="order-id"> </span></h4>
+                <p style="text-align: center"><sub><sup>*</sup>Сохрание Ваш id, он понадобится для подтверждения оплаты.</sub></p>
+                <h4>Реквизиты для оплаты:</h4>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+<!-- Checking section -->
+<section class="section" id="Checking">
+    <div class="container">
+        <div style="color: white; font-size: 16px" class="row">
+			<div style="font-size: 14px; margin-bottom: 30px;" class="col-sm-12 col-md-10 col-lg-8 col-sm-offset-0 col-md-offset-1 col-lg-offset-2  guest-welcome mCustomScrollbar">       
+                <h2><span id="paidcheck"></span></h2>
+            </div>
+        </div>
+    </div>
+</section>    
+    
+    
 <!-- Fourth (Contact) section -->
 <section class="section" id="contact">
 	<div class="container">

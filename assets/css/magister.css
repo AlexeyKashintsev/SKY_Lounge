@@ -37,7 +37,7 @@ body {
 	float:left;
 	display:block;
 	padding: 9px 10px;
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(25, 25, 25, 0.2);
 	background-image: none;
 	border: 0 none;
 	top:0px; 
@@ -119,9 +119,16 @@ body {
 	top:0;
 } 
 @media (min-width: 768px) {
-	.section { padding-top:160px;}
+	.section {
+        padding-top:160px;
+    }
 }
 
+@media (max-width: 800px) {
+	.section {
+        padding-bottom:20px;
+    }
+}
 /* Show one of sections */
 #head { 
 	display: block;

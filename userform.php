@@ -49,7 +49,7 @@
         fwrite($file, 'Палатка не нужна'."\r\n");
     };
     fwrite($file, 'Сумма к оплате: ');
-	fputs($file, $_POST['containerPrice']);	
+	fputs($file, $_POST['pricetotal']);	
     $a = uniqid(sh);
 	fwrite($file, "\r\n".'id: ');
 	fputs($file, $a."\r\n");

@@ -12,7 +12,8 @@ jQuery(document).ready(function($) {
         var sum = +1000;
             if ($('#transferCheck')[0].checked == true) sum += +($('#transferCheck')[0].value);
             if ($('#ferryCheck')[0].checked == true) sum += +($('#ferryCheck')[0].value);
-        sum = sum * +($("#selectPeople").val());  
+        sum = sum * +($("#selectPeople").val());
+        $('#pricetotal')[0].value = sum;
         price = $('<b/>', {
           id : 'totalPrice',
           name : 'totalPrice'
